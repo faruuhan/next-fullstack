@@ -1,3 +1,5 @@
+import Providers from "./Providers";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/assets/stylesheets/globals.sass";
@@ -12,7 +14,9 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} dark text-foreground bg-background`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 };
